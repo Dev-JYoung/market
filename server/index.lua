@@ -15,8 +15,4 @@ function vRP_gMarketS.getPlayerItem()
   local user_id = vRP.getUserId({source})
   local player = vRP.getUserSource({user_id})
   local data = vRP.getUserDataTable(user_id)
-
-  if data and data.inventory then
-    print("test")
-  end
 end
