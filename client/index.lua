@@ -6,12 +6,12 @@ vRP_gMarketS = Tunnel.getInterface("g-market", "g-market")
 Tunnel.bindInterface("g-market", vRP_gMarketC)
 Proxy.addInterface("g-market", vRP_gMarketC)
 
-Citizen.CreateThread(function()
-  while true do
-    vRP_gMarketS.getPlayerItem()
-    Citizen.Wait(1000);
-  end
-end)
+-- Citizen.CreateThread(function()
+--   while true do
+--     vRP_gMarketS.getPlayerItem()
+--     Citizen.Wait(1000);
+--   end
+-- end)
 
 Citizen.CreateThread(function ()
   Citizen.Wait(0)
