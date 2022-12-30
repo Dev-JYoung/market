@@ -6,11 +6,17 @@ vRP_gMarketS = Tunnel.getInterface("g-market", "g-market")
 Tunnel.bindInterface("g-market", vRP_gMarketC)
 Proxy.addInterface("g-market", vRP_gMarketC)
 
+Citizen.CreateThread(function()
+  while true do
+    vRP_gMarketS.getPlayerItem()
+    Citizen.Wait(1000);
+  end
+end)
+
 Citizen.CreateThread(function ()
   Citizen.Wait(0)
   while true do
     if IsControlJustPressed(0, 288) then
-      -- Input
       TransitionToBlurred(2000)
       SetNuiFocus(true, true)
       SendNuiMessage(json.encode({
@@ -22,12 +28,6 @@ Citizen.CreateThread(function ()
     end
     Citizen.Wait(0)
   end
-end)
-
-RegisterNUICallback('open', function(data, cb)
-	TransitionFromBlurred(2000)
-	SetNuiFocus(true, true)
-	cb(true)
 end)
 
 RegisterNUICallback('close', function(data, cb)

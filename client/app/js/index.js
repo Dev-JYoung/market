@@ -33,7 +33,7 @@ const app = new Vue({
         },
         body: JSON.stringify({}),
       });
-    },
+    }
   },
   created: function() {
     window.addEventListener('keydown', (event) => {
