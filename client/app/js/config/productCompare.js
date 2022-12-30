@@ -5,6 +5,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: true,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   },
   {
     id: 12,
@@ -82,5 +93,6 @@ const PRODUCTCOMPARE = [
     playerid: 2,
     price: '100,000,000',
     productleft: 1,
+    lowpricecurrent: false,
   }
 ]

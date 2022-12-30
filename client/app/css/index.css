@@ -509,7 +509,13 @@ body {
 
 .app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail {
   display: flex;
+  flex-direction: column;
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow {
+  display: flex;
   flex-direction: row;
+
   border-left: 1px solid rgba(0, 0, 0, 0.5);
 
   gap: 8px;
@@ -518,7 +524,20 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailText {
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+
+  border-left: 1px solid rgba(64, 144, 219, 1);
+
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(163, 196, 227, 1);
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailText {
   display: flex;
 
   font-size: 8pt;
@@ -526,7 +545,7 @@ body {
   color: rgba(0,0,0,0.5);
 }
 
-.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailSeller {
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailSeller {
   display: flex;
 
   font-size: 8pt;
@@ -534,7 +553,7 @@ body {
   color: rgba(0,0,0,1);
 }
 
-.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailPrice {
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailPrice {
   display: flex;
 
   font-size: 8pt;
@@ -542,7 +561,7 @@ body {
   color: rgba(0,0,0,1);
 }
 
-.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailLeft {
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailLeft {
   display: flex;
 
   margin-left: auto;
@@ -551,13 +570,57 @@ body {
   color: rgba(0,0,0,0.5);
 }
 
-.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailBuy {
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseNotLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailBuy {
   display: flex;
 
   font-size: 8pt;
   font-weight: 900;
   color: rgba(0,0,0,1);
 }
+
+/* 여기서부터 */
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailNoticeLowest {
+  display: flex;
+
+  font-size: 8pt;
+  font-weight: 900;
+  color: rgba(0,0,0,0.5);
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailSeller {
+  display: flex;
+
+  font-size: 8pt;
+  font-weight: 900;
+  color: rgba(0,0,0,1);
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailPrice {
+  display: flex;
+
+  font-size: 8pt;
+  font-weight: 900;
+  color: rgba(0,0,0,1);
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailLeft {
+  display: flex;
+
+  margin-left: auto;
+  font-size: 8pt;
+  font-weight: 900;
+  color: rgba(0,0,0,0.5);
+}
+
+.app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatus .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetail .marketMainSectionRightItemsSellOnlinePurchaseLow .marketMainSectionRightItemSellOnlinePurchaseItemStatusDetailBuy {
+  display: flex;
+
+  font-size: 8pt;
+  font-weight: 900;
+  color: rgba(0,0,0,1);
+}
+
+/* 여기 */
 
 .app .marketMain .marketMainSection .marketMainSectionRight .marketMainSectionRightItemSellOnlinePart .marketMainSectionRightItemSellOnlinePurchase .marketMainSectionRightItemSellOnlinePurchaseItemStatusLowestHighest {
   display: flex;

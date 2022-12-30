@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="app" id="app">
-    <div class="marketMain">
+    <div class="marketMain" v-if="visible">
       <div class="marketMainText">
         <span class="marketMainTextEsc">ESC 키를 눌러 닫을 수 있습니다.</span>
       </div>
@@ -35,18 +35,20 @@
                 :time='test.time'
                 ></sell>
             </div>
-            <div class="marketMainSectionLeftSellButton">
+            <div class="marketMainSectionLeftSellButton" @click="SET_MOD">
               <i class="fa-solid fa-plus"></i>
               <div class="marketMainSectionLeftSellItemText">
-                <span class="marketMainSectionLeftSellItemTextSubTitle">아이템을 판매하시러 오셨나요?</span>
-                <span class="marketMainSectionLeftSellItemTextTitle">아이템 등록하기</span>
+                <span class="marketMainSectionLeftSellItemTextSubTitle" v-if="!sellMod">아이템을 판매하시러 오셨나요?</span>
+                <span class="marketMainSectionLeftSellItemTextTitle" v-if="!sellMod">아이템 등록하기</span>
+                <span class="marketMainSectionLeftSellItemTextSubTitle" v-if="sellMod">현재 팔리고 있는 아이템을 확인하고 싶으신가요?</span>
+                <span class="marketMainSectionLeftSellItemTextTitle" v-if="sellMod">장터로 돌아가기</span>
               </div>
             </div>
             <div class="marketMainSectionLeftCurrentMoney">
               <i class="fa-solid fa-credit-card"></i>
               <div class="marketMainSectionLeftCurrentMoneyText">
-                <span class="marketMainSectionLeftCurrentMoneyTextSubTitle">이즈님의 잔고</span>
-                <span class="marketMainSectionLeftCurrentMoneyTextTitle">100,000,000 KRW</span>
+                <span class="marketMainSectionLeftCurrentMoneyTextSubTitle">{{userName}}님의 잔고</span>
+                <span class="marketMainSectionLeftCurrentMoneyTextTitle">{{usermoney.toLocaleString()}} KRW</span>
               </div>
             </div>
           </div>
@@ -61,10 +63,11 @@
           </div>
           <div class="marketMainSectionRightItemSearch">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="검색할 아이템을 입력하세요...">
+            <input type="text" placeholder="검색할 아이템을 입력하세요..." v-if="!sellMod">
+            <input type="text" placeholder="판매할 아이템을 입력하세요..." v-if="sellMod">
           </div>
           <div class="marketMainSectionRightItemRegistered">
-            <span class="marketMainSectionRightItemRegisteredTitle">등록된 아이템 - 72</span>
+            <span class="marketMainSectionRightItemRegisteredTitle">등록된 아이템 - {{registeredItem}}</span>
           </div>
           <div class="marketMainSectionRightItemSellOnlinePart">
             <div class="marketMainSectionRightItemSellOnline">
@@ -93,6 +96,7 @@
                     :playerid='compare.playerid'
                     :price='compare.price'
                     :productleft='compare.productleft'
+                    :lowpricecurrent='compare.lowpricecurrent' 
                   ></compare>
                 </div>
               </div>
