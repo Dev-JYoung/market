@@ -6,12 +6,12 @@ vRP_gMarketS = Tunnel.getInterface("g-market", "g-market")
 Tunnel.bindInterface("g-market", vRP_gMarketC)
 Proxy.addInterface("g-market", vRP_gMarketC)
 
--- Citizen.CreateThread(function()
---   while true do
---     vRP_gMarketS.getPlayerItem()
---     Citizen.Wait(1000);
---   end
--- end)
+Citizen.CreateThread(function()
+  while true do
+    vRP_gMarketS.getPlayerItem()
+    Citizen.Wait(10000);
+  end
+end)
 
 Citizen.CreateThread(function ()
   Citizen.Wait(0)
@@ -19,7 +19,7 @@ Citizen.CreateThread(function ()
     if IsControlJustPressed(0, 288) then
       TransitionToBlurred(2000)
       SetNuiFocus(true, true)
-      SendNuiMessage(json.encode({
+      SendNUIMessage(json.encode({
         type = 'UPDATE',
         data = {
           visible = true
@@ -28,6 +28,15 @@ Citizen.CreateThread(function ()
     end
     Citizen.Wait(0)
   end
+end)
+
+RegisterNetEvent('g-market:AddPlayerItem')
+AddEventHandler('g-market:AddPlayerItem', function(data)
+  SendNUIMessage(json.encode({
+    type = 'ADD_ITEM_LIST',
+    data = data,
+  }))
+  print("Item Name " + data.item_name)
 end)
 
 RegisterNUICallback('close', function(data, cb)

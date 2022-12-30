@@ -3,7 +3,7 @@ const app = new Vue({
   data: {
     usermoney: 100000000,
     sellTest: TEST,
-    currentSale: CURRENTSALE,
+    currentSale: [],
     productcompare: PRODUCTCOMPARE,
     itemInfo: [],
     sellMod: false,
@@ -16,6 +16,9 @@ const app = new Vue({
       Object.keys(data).map((key) => {
         this[key] = data[key];
       });
+    },
+    ADD_ITEM_LIST: function(data) {
+      console.log(data)
     },
     SET_MOD: function() {
       if(this.sellMod === true) {

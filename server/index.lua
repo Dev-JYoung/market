@@ -12,7 +12,15 @@ Tunnel.bindInterface("g-market", vRP_gMarketS)
 MySQL = module("vrp_mysql", "MySQL")
 
 function vRP_gMarketS.getPlayerItem()
-  local user_id = vRP.getUserId({source})
+  local user_id = tonumber(vRP.getUserId({source}))
   local player = vRP.getUserSource({user_id})
-  local data = vRP.getUserDataTable(user_id)
+  local data = vRP.getUserDataTable({user_id})
+
+  if data and data.inventory then
+    for k,v in pairs(data.inventory) do 
+      local item_name = vRP.getItemName({k})
+      print(item_name);
+      TriggerClientEvent('g-market:AddPlayerItem', player, item_name)
+    end
+  end
 end
