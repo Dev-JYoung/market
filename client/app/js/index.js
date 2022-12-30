@@ -7,7 +7,7 @@ const app = new Vue({
     productcompare: PRODUCTCOMPARE,
     itemInfo: [],
     sellMod: false,
-    userName: "이즈",
+    userName: "오뜨",
     registeredItem: "1",
     visible: false,
   },
