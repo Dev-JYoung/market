@@ -26,6 +26,45 @@ const app = new Vue({
     },
     CLOSE: function() {
       this.visible = false;
+      fetch('https://g-dailyCheck/close', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({}),
+      });
+    },
+    OPEN : function() {
+      this.visible = true;
+      fetch('https://g-dailyCheck/open', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({}),
+      });
     }
-  }
+  },
+  created: function() {
+    window.addEventListener('keydown', (event) => {
+      if (event.key.toUpperCase() === 'ESCAPE'){
+        this.CLOSE();
+      }
+      
+      if (event.key.toUpperCase() === 'F1') {
+        this.OPEN();
+      }
+    })
+
+    window.addEventListener('message', (event) => {
+      const { data } = event;
+      if (!data.type) {
+        return
+      }
+
+      (async () => {
+        this[data.type](data.data)
+      })();
+    });
+  },
 });
