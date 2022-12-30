@@ -26,7 +26,7 @@ const app = new Vue({
     },
     CLOSE: function() {
       this.visible = false;
-      fetch('https://g-dailyCheck/close', {
+      fetch('https://market/close', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
@@ -34,25 +34,11 @@ const app = new Vue({
         body: JSON.stringify({}),
       });
     },
-    OPEN : function() {
-      this.visible = true;
-      fetch('https://g-dailyCheck/open', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify({}),
-      });
-    }
   },
   created: function() {
     window.addEventListener('keydown', (event) => {
       if (event.key.toUpperCase() === 'ESCAPE'){
         this.CLOSE();
-      }
-      
-      if (event.key.toUpperCase() === 'F1') {
-        this.OPEN();
       }
     })
 
