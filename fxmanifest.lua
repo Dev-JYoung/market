@@ -1,4 +1,4 @@
-﻿fx_version 'cerulean'
+fx_version 'cerulean'
 games { 'gta5' }
 
 description 'Genie Used Market'
@@ -14,7 +14,6 @@ client_scripts {
 	"@vrp/client/Tunnel.lua",
 	"@vrp/client/Proxy.lua",
   'client/**/*.lua',
-	'config/client.lua',
 }
 
 server_scripts {
@@ -23,7 +22,6 @@ server_scripts {
   '@vrp/lib/Proxy.lua',
   "@vrp/client/Tunnel.lua",
   'server/**/*.lua',
-	'config/server.lua',
 }
   
 files {
