@@ -31,12 +31,12 @@ Citizen.CreateThread(function ()
 end)
 
 RegisterNetEvent('g-market:AddPlayerItem')
-AddEventHandler('g-market:AddPlayerItem', function(data)
+AddEventHandler('g-market:AddPlayerItem', function(name)
   SendNUIMessage(json.encode({
     type = 'ADD_ITEM_LIST',
-    data = data,
+    data = name,
   }))
-  print("Item Name " + data.item_name)
+  -- print("Item Name " + data.item_name)
 end)
 
 RegisterNUICallback('close', function(data, cb)

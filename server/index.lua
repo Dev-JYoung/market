@@ -18,9 +18,8 @@ function vRP_gMarketS.getPlayerItem()
 
   if data and data.inventory then
     for k,v in pairs(data.inventory) do 
-      local item_name = vRP.getItemName({k})
-      print(item_name);
-      TriggerClientEvent('g-market:AddPlayerItem', player, item_name)
+      local name = vRP.getItemName({k})
+      print(name);
     end
   end
 end
